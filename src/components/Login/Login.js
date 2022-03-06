@@ -12,6 +12,14 @@ const Login = (props) => {
   const [formIsValid, setFormIsValid] = useState(false);
 
   useEffect(() => {
+    console.log('Effect running every single time the component re-renders');
+  });
+
+  useEffect(() => {
+    console.log('Effect running only for the first time when component renders');
+  }, []);
+
+  useEffect(() => {
     const handler = setTimeout(() => {
       console.log('Checking form validity');
       setFormIsValid(
